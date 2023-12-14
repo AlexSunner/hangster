@@ -18,7 +18,7 @@ def display_word(word, guessed_letters):
             display += letter
         else:
             display += "_"
-        return display
+    return display
 
 def main():
     """
