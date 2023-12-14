@@ -63,4 +63,6 @@ def main():
         if set(guessed_letters) >= set(word_to_guess):
             print("Congratulations! You guessed the word:", word_to_guess)
             break
-            
+
+if __name__ == "__main__":
+    main()
