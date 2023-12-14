@@ -33,7 +33,9 @@ def main():
     guessed_letters = []
     word_to_guess = choose_word()
 
-    print("Welcome to Hangster!")
+    print("Welcome to Hangster! \n")
+    print("---------------------------")
+    print("Guess the correct word - You have 6 attempts! \n")
 
     while True:
         current_display = display_word(word_to_guess, guessed_letters)
