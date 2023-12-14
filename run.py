@@ -54,7 +54,7 @@ def main():
             max_attempts -= 1
             print(f"Incorrect! Attempts left: {max_attempts}")
 
-            if max_attemptes == 0:
+            if max_attempts == 0:
                 print("Game over! The word was:", word_to_guess)
                 break
         else:
