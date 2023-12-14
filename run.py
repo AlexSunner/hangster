@@ -20,7 +20,7 @@ def display_word(word, guessed_letters):
             display += "_"
         return display
 
-def hangman():
+def main():
     """
     Main function to run the game.
     The function validates the user input,
@@ -45,4 +45,22 @@ def hangman():
             continue
 
         if guess in guessed_letters:
+            print("You've already guessed that letter. Try again.")
+            continue
+
+        guessed_letters.append(guess)
+
+        if guess not in word_to_guess:
+            max_attempts -= 1
+            print(f"Incorrect! Attempts left: {max_attempts}")
+
+            if max_attemptes == 0:
+                print("Game over! The word was:", word_to_guess)
+                break
+        else:
+            print("Correct guess!")
+
+        if set(guessed_letters) >= set(word_to_guess):
+            print("Congratulations! You guessed the word:", word_to_guess)
+            break
             
