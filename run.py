@@ -1,16 +1,24 @@
 import random
 
-def choose_word():
+def choose_word(difficulty):
     """ 
-    Random words from a predefined list 
+    Random words from a predefined list based on difficulty.
     """
-    words = ["workspace", "develop", "programming", "python", "coding"]
+    if difficulty == "easy":
+        words = ["snow", "apple", "green", "play", "hat"]
+    elif difficulty == "medium":
+        words = ["christmas", "reindeer", "winter", "snowball", "presents"]
+    elif difficulty == "hard":
+        words = ["encapsulation", "inheritance", "polymorphism", "abstraction", "framework"]
+    else:
+        raise ValueError("Invalid difficulty level.")
+
     return random.choice(words)
 
 def display_word(word, guessed_letters):
     """
     Display the current state of the word, 
-    showing guessed letters and placeholders for unguessed letters
+    showing guessed letters and placeholders for unguessed letters.
     """
     display = " "
     for letter in word:
@@ -23,20 +31,25 @@ def display_word(word, guessed_letters):
 def main():
     """
     Main function to run the game.
+    Player gets to choose a difficulty level,
     The function validates the user input,
     Checks if the letter has already been guessed,
     Add the guessed letter to the list,
     Checks if the guessed letter is not in the word,
-    Checks if the players has more attempts, if not, game over.
+    Checks if the player has more attempts, if not, game over.
     """
-    max_attempts = 6
+    difficulty = input("Choose a difficulty (easy, medium, hard): ").lower()
+    if difficulty not in ["easy", "medium", "hard"]:
+        print("Invalid difficulty level. Exiting.")
+        return
+    max_attempts = 6 if difficulty == "easy" else 5 if difficulty == "medium" else 4
     guessed_letters = []
-    word_to_guess = choose_word()
+    word_to_guess = choose_word(difficulty)
 
     print("---------------------------")
-    print("Welcome to Hangster!")
+    print(f"Welcome to Hangster! Difficulty: {difficulty.capitalize()}")
     print("---------------------------")
-    print("Guess the correct word - You have 6 attempts!")
+    print(f"Guess the correct word - You have {max_attempts} attempts!")
     print("--------------------------- \n")
 
     while True:
