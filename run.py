@@ -28,6 +28,75 @@ def display_word(word, guessed_letters):
             display += "_"
     return display
 
+def print_hangman_art(incorrect_attempts):
+    """Print ASCII art for Hangman based on incorrect attempts."""
+    hangman_art = [
+        """
+         ------
+         |    |
+         |
+         |
+         |
+         |
+        ---
+        """,
+        """
+         ------
+         |    |
+         |    O
+         |
+         |
+         |
+        ---
+        """,
+        """
+         ------
+         |    |
+         |    O
+         |    |
+         |
+         |
+        ---
+        """,
+        """
+         ------
+         |    |
+         |    O
+         |   /|
+         |
+         |
+        ---
+        """,
+        """
+         ------
+         |    |
+         |    O
+         |   /|\\
+         |
+         |
+        ---
+        """,
+        """
+         ------
+         |    |
+         |    O
+         |   /|\\
+         |   /
+         |
+        ---
+        """,
+        """
+         ------
+         |    |
+         |    O
+         |   /|\\
+         |   / \\
+         |
+        ---
+        """
+    ]
+    print(hangman_art[incorrect_attempts])
+
 def main():
     """
     Main function to run the game.
@@ -36,6 +105,7 @@ def main():
     Checks if the letter has already been guessed,
     Add the guessed letter to the list,
     Checks if the guessed letter is not in the word,
+    Prints a hanging man depending on incorrect attempts,
     Checks if the player has more attempts, if not, game over.
     """
     difficulty = input("Choose a difficulty (easy, medium, hard): ").lower()
@@ -51,6 +121,7 @@ def main():
     print("---------------------------")
     print(f"Guess the correct word - You have {max_attempts} attempts!")
     print("--------------------------- \n")
+
 
     while True:
         current_display = display_word(word_to_guess, guessed_letters)
@@ -69,6 +140,7 @@ def main():
 
         if guess not in word_to_guess:
             max_attempts -= 1
+            print_hangman_art(6 - max_attempts)
             print(f"Incorrect! Attempts left: {max_attempts}")
 
             if max_attempts == 0:
