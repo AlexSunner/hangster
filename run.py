@@ -169,7 +169,7 @@ def main():
             print_colored_text("Correct guess!", 'green')
 
         if set(guessed_letters) >= set(word_to_guess):
-            print("Congratulations! You guessed the word:", word_to_guess)
+            print_colored_text("Congratulations! You guessed the word: " + word_to_guess, 'green')
             break
 
 if __name__ == "__main__":
