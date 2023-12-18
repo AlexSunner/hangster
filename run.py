@@ -145,6 +145,10 @@ def main():
     while True:
         current_display = display_word(word_to_guess, guessed_letters)
         print(f"Current word: {current_display}")
+
+        if guessed_letters:
+            print("Guessed letters: " + ' '.join(guessed_letters))
+
         guess = input("Guess a letter: ").lower()
 
         if len(guess) != 1 or not guess.isalpha():
