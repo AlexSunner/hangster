@@ -1,5 +1,24 @@
 import random
 
+def print_colored_text(text, color):
+    """Print colored text using ANSI escape codes."""
+    colors = {
+        'red': '\033[91m',
+        'green': '\033[92m',
+        'yellow': '\033[93m',
+        'blue': '\033[94m',
+        'purple': '\033[95m',
+        'cyan': '\033[96m',
+        'white': '\033[97m',
+        'reset': '\033[0m'
+    }
+
+    if color not in colors:
+        print(f"Invalid color '{color}'. Using default color.")
+        color = 'white'
+
+    print(f"{colors[color]}{text}{colors['reset']}")
+
 def choose_word(difficulty):
     """ 
     Random words from a predefined list based on difficulty.
@@ -116,11 +135,11 @@ def main():
     guessed_letters = []
     word_to_guess = choose_word(difficulty)
 
-    print("---------------------------")
-    print(f"Welcome to Hangster! Difficulty: {difficulty.capitalize()}")
-    print("---------------------------")
-    print(f"Guess the correct word - You have {max_attempts} attempts!")
-    print("--------------------------- \n")
+    print_colored_text("---------------------------", 'blue')
+    print_colored_text(f"Welcome to Hangster! Difficulty: {difficulty.capitalize()}", 'yellow')
+    print_colored_text("---------------------------", 'blue')
+    print_colored_text(f"Guess the correct word - You have {max_attempts} attempts!", 'yellow')
+    print_colored_text("--------------------------- \n", 'blue')
 
 
     while True:
@@ -141,13 +160,13 @@ def main():
         if guess not in word_to_guess:
             max_attempts -= 1
             print_hangman_art(6 - max_attempts)
-            print(f"Incorrect! Attempts left: {max_attempts}")
+            print_colored_text(f"Incorrect! Attempts left: {max_attempts}", 'red')
 
             if max_attempts == 0:
-                print("Game over! The word was:", word_to_guess)
+                print_colored_text("Game over! The word was: " + word_to_guess, 'red')
                 break
         else:
-            print("Correct guess!")
+            print_colored_text("Correct guess!", 'green')
 
         if set(guessed_letters) >= set(word_to_guess):
             print("Congratulations! You guessed the word:", word_to_guess)
