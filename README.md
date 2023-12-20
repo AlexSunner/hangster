@@ -78,3 +78,7 @@ The contents and structure of the game was built in Python.
 
 [Heroku](https://heroku.com/) served as the platform for deploying the Hangman game, enabling the project to be accessible online and showcasing the game to a broader audience.
 
+### Code Validator
+[CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the code.
+
+Errors were found and taken cared of (lines of code being too long).
