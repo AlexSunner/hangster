@@ -123,14 +123,19 @@ def main():
     The function validates the user input,
     Checks if the letter has already been guessed,
     Add the guessed letter to the list,
+    Displays guessed letters,
     Checks if the guessed letter is not in the word,
     Prints a hanging man depending on incorrect attempts,
     Checks if the player has more attempts, if not, game over.
     """
-    difficulty = input("Choose a difficulty (easy, medium, hard): ").lower()
-    if difficulty not in ["easy", "medium", "hard"]:
-        print("Invalid difficulty level. Exiting.")
-        return
+    while True:
+        difficulty = input("Choose a difficulty (easy, medium, hard): ").lower()
+        if difficulty in ["easy", "medium", "hard"]:
+            break
+        else:
+            print_colored_text("Invalid difficulty level. Please choose 'easy', 'medium', or 'hard'.", 'red')
+
+
     max_attempts = 6 if difficulty == "easy" else 5 if difficulty == "medium" else 4
     guessed_letters = []
     word_to_guess = choose_word(difficulty)
