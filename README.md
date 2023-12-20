@@ -1,32 +1,80 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hangster
+Welcome to Hangster, a command-line Hangman game implemented in Python! 
+Hangster provides an entertaining and challenging experience where players can test
+their word-guessing skills while enjoying the classic game of Hangman.
 
-Welcome,
+## Overview
+Hangster offers three difficulty levels—easy, medium, and hard—each with its own set of words to guess. Players are prompted to choose a difficulty level, and from there, the game unfolds as they attempt to guess the hidden word letter by letter. The game includes ASCII art for the Hangman and provides feedback on correct and incorrect guesses.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+## Live Website
+[Hangster](https://hangster-f7c352ecfda2.herokuapp.com/)
 
-## Reminders
+## Repository
+[GitHub Repository](https://github.com/AlexSunner/hangster)
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## UX & Design
 
-## Creating the Heroku app
+### User Stories
+Choosing a Difficulty:
+As a player, I want to select a difficulty level at the start of the game to tailor the challenge to my skill level.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Interactive Gameplay:
+As a player, I want to guess letters interactively to uncover the hidden word and enjoy an engaging gaming experience.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+Visual Feedback:
+As a player, I want to see visual representations of the Hangman for correct and incorrect guesses to track my progress.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+Game Over Scenario:
+As a player, I want the game to end when I run out of attempts, displaying the correct word, to know the outcome.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+Error Handling:
+As a player, I want clear error messages for invalid inputs (e.g., difficulty level) so that I can correct and continue playing.
 
-Connect your GitHub repository and deploy as normal.
+Replayability:
+As a player, I want the option to replay the game with different difficulty levels and word sets for continued challenge and enjoyment.
 
-## Constraints
+### Logic Flow
+I created this visual representation of the game logic. Follow the flowchart to understand the dynamic interactions and decision points that shape
+the player's experience in this classic Hangman game.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+![Flowchart](https://raw.githubusercontent.com/AlexSunner/hangster/main/images/flowchart.jpg)
 
----
+## Features
+### Difficulties
+Choose from easy, medium and hard difficulty levels, each with its unique set of words.
 
-Happy coding!
+![Difficulty](https://raw.githubusercontent.com/AlexSunner/hangster/main/images/difficulty1.jpg)
+
+### Max Attempts
+Navigate the challenge of Hangster as you make strategic guesses, mindful of the limited attempts available before facing the consequences.
+
+![Max Attempts](https://raw.githubusercontent.com/AlexSunner/hangster/main/images/attempts2.jpg)
+
+### Winning Scenario
+Celebrate your victory in Hangster by successfully guessing the word, unlocking the winning scenario and showcasing your word-guessing prowess.
+
+![Winning](https://raw.githubusercontent.com/AlexSunner/hangster/main/images/congratulations4.jpg)
+
+### Game Over Scenario
+Witness the outcome of your gameplay journey in the game over scenario, where the correct word is revealed, marking the end of your Hangster adventure.
+
+![Game Over](https://raw.githubusercontent.com/AlexSunner/hangster/main/images/gameover3.jpg)
+
+### Error Handling
+User-friendly error messages guide players in case of invalid inputs, ensuring a smooth gaming experience.
+
+## Python Libraries Used
+### random
+This module provides functions for generating pseudo-random numbers. In the Hangster game, it's used to randomly select a word from a predefined list.
+
+## Technologies Used
+### Python
+The contents and structure of the game was built in Python.
+
+### Developing Tools Used
+[Gitpod](https://www.gitpod.io/) was employed as the integrated development environment (IDE) for this project, providing a seamless and collaborative coding environment accessible through a web browser.
+
+[GitHub](https://github.com/) was utilized for code storage and version control, enabling the management of commits and facilitating collaborative development for the Hangman game.
+
+[Heroku](https://heroku.com/) served as the platform for deploying the Hangman game, enabling the project to be accessible online and showcasing the game to a broader audience.
+
