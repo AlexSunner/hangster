@@ -132,6 +132,23 @@ I supplemented my learning by watching Python tutorials on [YouTube](https://you
 The Hangman game is deployed on Heroku, providing a convenient way for users to access and enjoy the game.
 [Hangster Game](https://hangster-f7c352ecfda2.herokuapp.com/)
 
+### Deploying to Heroku
+1. Log into Heroku website.
+2. From the Dashboard page, select "New" and then "Create new app."
+3. Assign a name for the application, select the region and then select "Create app."
+4. Once the application is created, from the submenu at the top, select "Settings" and then "Reveal Config Vars" to set up config vars.
+5. In the KEY input field, enter "PORT" all in capitals and enter "8000" for the VALUE input field and select "Add." If there are other config vars required to run the application, add those here. For this application, there is no other config var required.
+6. Scroll down to the "Buildpacks" section and select "Add buildpack."
+7. Add buildpacks required to run the application. For this application, "Python" and "Nodejs" are required.
+The order of the buildpacks is important. "Python" should be the first and then "Nodejs." If they are not in the correct order, click and drag to change.
+8. Select "Deploy" from the submenu at the top.
+Under the "Deployment method" section, select "GitHub" to connect to GitHub.
+Under the "Connect to GitHub" section, enter the name of the repository and select "Search."
+Once the repository is located, select "Connect" to connect the repository to the application within Heroku.
+9. Select either "Enable Automatic Deploys" which will deploy a new version of the application every time changes are pushed to GitHub or opt for "Manual Deploy." For this application, "Automatic Deploys" was selected.
+10. Once the application is deployed, scroll back to the top of the screen and select "Open app."
+If "Enable Automatic Deploys" has been selected, the application will be built and available after the next changes are pushed to GitHub.
+
 ### Local Deployment
 If you prefer to run the game locally on your machine, follow these steps:
 
@@ -174,7 +191,7 @@ Cloning your repository will allow you to download a local version of the reposi
 - The print_color_text function, adding vibrant colors to the game, was taken from [Stack Overflow](https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal)
 
 3. Readme Structure Inspiration:
-- The structure and formatting of this README were inspired by [Shizuka Donaghue's Melting Snowman](https://github.com/ShizukaDonaghue/melting-snowman/blob/main/README.md). Special thanks for providing a clear and well-organized template.
+- The structure and formatting of this README were inspired by [Shizuka Donaghue's Melting Snowman](https://github.com/ShizukaDonaghue/melting-snowman/blob/main/README.md). Special thanks for providing a clear and well-organized template. Especially the Deployment to Heroku part.
 
 4. Game Improvement Ideas:
 - Many thanks to my mentor, Harry Dhillon, for providing valuable insights and ideas that significantly contributed to the enhancement of the Hangster game.
