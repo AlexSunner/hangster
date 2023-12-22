@@ -4,7 +4,7 @@ Hangster provides an entertaining and challenging experience where players can t
 their word-guessing skills while enjoying the classic game of Hangman.
 
 ## Overview
-Hangster offers three difficulty levels—easy, medium, and hard—each with its own set of words to guess. Players are prompted to choose a difficulty level, and from there, the game unfolds as they attempt to guess the hidden word letter by letter. The game includes ASCII art for the Hangman and provides feedback on correct and incorrect guesses.
+Hangster offers three difficulty levels — easy, medium, and hard — each with its own set of words to guess. Players are prompted to choose a difficulty level, and from there, the game unfolds as they attempt to guess the hidden word letter by letter. The game includes ASCII art for the Hangman and provides feedback on correct and incorrect guesses.
 
 ## Live Website
 [Hangster](https://hangster-f7c352ecfda2.herokuapp.com/)
@@ -81,4 +81,100 @@ The contents and structure of the game was built in Python.
 ### Code Validator
 [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the code.
 
-Errors were found and taken cared of (lines of code being too long).
+Errors were found and handled correctly (lines of code being too long).
+
+### Other Resources Used
+[Google](https://google.com/) was a valuable resource throughout the project, providing insights into Python syntax, game development best practices, and troubleshooting specific challenges.
+
+[Slack](https://slack.com/) served as a collaborative platform, allowing me to seek advice from the programming community, share progress updates, and receive timely feedback on coding challenges encountered during the Hangster game development.
+
+I supplemented my learning by watching Python tutorials on [YouTube](https://youtube.com/), gaining insights into the basic structure and syntax of the language from experienced developers and educators.
+
+## Testing
+### Unit Testing
+1. Function: choose_word(difficulty)
+- Scenario: Ensure the function returns a valid word based on the chosen difficulty level.
+- Procedure: Call the function with various difficulty levels and check if the returned word is in the corresponding word list.
+
+2. Function: display_word(word, guessed_letters)
+- Scenario: Confirm that the function correctly displays the current state of the word with guessed letters.
+- Procedure: Test the function with different words and guessed letter combinations.
+
+3. Function: print_hangman_art(incorrect_attempts)
+- Scenario: Verify that the function prints the correct Hangman ASCII art based on the number of incorrect attempts.
+- Procedure: Call the function with different values of incorrect_attempts and check if the printed art matches the expected result.
+
+### Integration Tests
+
+1. Game Initialization
+- Scenario: Ensure the game initializes correctly with user input for difficulty.
+- Procedure: Provide valid and invalid inputs for difficulty during game initialization and verify that the game prompts the user appropriately.
+
+2. Letter Guessing
+- Scenario: Confirm that the game handles letter guessing correctly.
+- Procedure: Guess both correct and incorrect letters and check if the game responds accordingly, updating the display and guessed letters.
+
+3. Game Over and Winning Conditions
+- Scenario: Verify that the game ends correctly when the maximum attempts are reached or when the word is guessed.
+- Procedure: Play the game to completion under different conditions and ensure that the correct end messages are displayed.
+
+### User Interface (UI) Testing
+
+1. Color Display
+- Scenario: Check if colored text is displayed correctly in the console.
+- Procedure: Run the game and confirm that the colored text for messages, prompts, and ASCII art is visually appealing.
+
+2. Input Validation
+- Scenario: Validate user input for difficulty and letter guessing.
+- Procedure: Enter valid and invalid inputs during different stages of the game and ensure the game responds appropriately.
+
+## Deployment
+The Hangman game is deployed on Heroku, providing a convenient way for users to access and enjoy the game.
+[Hangster Game](https://hangster-f7c352ecfda2.herokuapp.com/)
+
+### Local Deployment
+If you prefer to run the game locally on your machine, follow these steps:
+
+1. Clone the Repository:
+- Clone the Hangster game repository from GitHub to your local machine using the following command in the terminal: git clone https://github.com/AlexSunner/hangster.git
+
+2. Install Dependencies:
+- Install the necessary dependencies by running the following command in the terminal: pip install -r requirements.txt
+
+3. Run the Game:
+- Execute the game script by running the following command in the terminal: python3 run.py
+
+4. Enjoy the Hangster Experience:
+- Have fun playing Hangster locally on your machine!
+
+### Forking the GitHub Repository
+If you want to make changes to your repository without affecting it, you can make a copy of it by 'Forking' it. This ensures your original repository remains unchanged.
+
+1. Find the relevant GitHub repository
+2. In the top right corner of the page, click the Fork button (under your account)
+3. Your repository has now been 'Forked' and you have a copy to work on
+
+### Cloning the GitHub Repository
+
+Cloning your repository will allow you to download a local version of the repository to be worked on. Cloning can also be a great way to backup your work.
+
+1. Find the relevant GitHub repository
+2. Press the arrow on the Code button
+3. Copy the link that is shown in the drop-down
+4. Now open Codeanywhere or whatever editor you use & select the directory location where you would like the clone created
+5. In the terminal type 'git clone' & then paste the link you copied in GitHub
+6. Press enter and your local clone will be created.
+
+## Credits
+
+1. ASCII Art for Hangster:
+- The ASCII art for the Hangster game was taken and modified from [Chris Horton](https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c)
+
+2. Colorful Text Printing:
+- The print_color_text function, adding vibrant colors to the game, was taken from [Stack Overflow](https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal)
+
+3. Readme Structure Inspiration:
+- The structure and formatting of this README were inspired by [Shizuka Donaghue's Melting Snowman](https://github.com/ShizukaDonaghue/melting-snowman/blob/main/README.md). Special thanks for providing a clear and well-organized template.
+
+4. Game Improvement Ideas:
+- Many thanks to my mentor, Harry Dhillon, for providing valuable insights and ideas that significantly contributed to the enhancement of the Hangster game.
