@@ -3,6 +3,8 @@ Welcome to Hangster, a command-line Hangman game implemented in Python!
 Hangster provides an entertaining and challenging experience where players can test
 their word-guessing skills while enjoying the classic game of Hangman.
 
+![Mockup](https://raw.githubusercontent.com/AlexSunner/hangster/main/images/mockup.jpg)
+
 ## Overview
 Hangster offers three difficulty levels — easy, medium, and hard — each with its own set of words to guess. Players are prompted to choose a difficulty level, and from there, the game unfolds as they attempt to guess the hidden word letter by letter. The game includes ASCII art for the Hangman and provides feedback on correct and incorrect guesses.
 
